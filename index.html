@@ -3352,49 +3352,66 @@
                 padding: 2.5rem 0 1.5rem 0 !important;
             }
             
+            /* Stats grid padding and width */
             .stats-grid {
-                padding: 0 0.4rem !important;
+                padding: 0 0.5rem !important;
                 gap: 0.5rem !important;
             }
             
-            /* 1) Reduce internal spacing inside stat boxes - tighter rows */
+            /* 2) Further reduce internal spacing inside stat boxes */
             .stat-card {
-                padding: 0.33rem 0.27rem !important;
+                padding: 0.4rem 0.35rem !important;
                 min-height: auto !important;
             }
             
             .stat-number {
                 font-size: 1.7rem !important;
-                margin-bottom: 0.067rem !important;
-                line-height: 0.9 !important;
+                margin-bottom: 0.12rem !important;
+                line-height: 0.95 !important;
             }
             
             .stat-label {
                 font-size: 0.62rem !important;
-                margin-bottom: 0.067rem !important;
-                line-height: 0.95 !important;
+                margin-bottom: 0.08rem !important;
+                line-height: 0.98 !important;
             }
             
             .stat-description {
                 font-size: 0.58rem !important;
-                line-height: 1.05 !important;
-                margin-top: 0.033rem !important;
-                margin-bottom: 0.033rem !important;
+                line-height: 1.08 !important;
+                margin-top: 0.05rem !important;
+                margin-bottom: 0.05rem !important;
             }
             
             /* Growth indicator (+32% YoY) spacing */
             div[style*="margin-top: 0.5rem; font-size: 0.85rem"] {
-                margin-top: 0.1rem !important;
+                margin-top: 0.12rem !important;
                 font-size: 0.75rem !important;
             }
             
             /* 4) Optimize Current Role & Occupation section */
-            /* 4A) 2) Match container width exactly to stats grid above */
+            /* Target parent container with outer padding */
+            div[style*="max-width: 1200px"][style*="padding: 0 3rem"] {
+                padding: 0 0.5rem !important;
+            }
+            
+            /* Target the white container itself */
+            div[style*="background: white; border-radius: 15px; padding: 2rem 3rem"] {
+                padding: 1.2rem 0.8rem !important;
+                margin: 1.5rem 0 !important;
+            }
+            
+            /* Alternative selector - target any white background container in stats section */
+            section[style*="background: #248aca"] div[style*="background: white"] {
+                padding: 1.2rem 0.8rem !important;
+            }
+            
+            /* Legacy selector kept for compatibility */
             div[style*="background: #ffffff; padding: 3rem; border-radius: 15px"] {
-                padding: 0.8rem 0.27rem !important;
-                margin-left: 0.4rem !important;
-                margin-right: 0.4rem !important;
-                width: calc(100% - 0.8rem) !important;
+                padding: 1.2rem 0.8rem !important;
+                margin-left: 0.5rem !important;
+                margin-right: 0.5rem !important;
+                width: calc(100% - 1rem) !important;
             }
             
             /* 4B) Reduce inner spacing - role labels and percentages */
