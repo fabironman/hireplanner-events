@@ -3357,33 +3357,39 @@
                 gap: 0.5rem !important;
             }
             
+            /* 1) Reduce spacing inside stat boxes to reduce height */
             .stat-card {
-                padding: 0.7rem 0.4rem !important;
+                padding: 0.6rem 0.4rem !important;
                 min-height: auto !important;
             }
             
             .stat-number {
                 font-size: 1.7rem !important;
-                margin-bottom: 0.25rem !important;
+                margin-bottom: 0.2rem !important;
                 line-height: 1 !important;
             }
             
             .stat-label {
                 font-size: 0.62rem !important;
-                margin-bottom: 0.2rem !important;
-                line-height: 1.15 !important;
+                margin-bottom: 0.15rem !important;
+                line-height: 1.1 !important;
             }
             
             .stat-description {
                 font-size: 0.58rem !important;
-                line-height: 1.2 !important;
-                margin-top: 0.15rem !important;
+                line-height: 1.15 !important;
+                margin-top: 0.1rem !important;
+            }
+            
+            div[style*="margin-top: 0.5rem; font-size: 0.85rem"] {
+                margin-top: 0.2rem !important;
+                font-size: 0.75rem !important;
             }
             
             /* 4) Optimize Current Role & Occupation section */
-            /* 4A) Reduce outer container spacing */
+            /* 4A) 2) Match outer container padding to stats boxes (0.4rem) */
             div[style*="background: #ffffff; padding: 3rem; border-radius: 15px"] {
-                padding: 1rem 0.5rem !important;
+                padding: 1rem 0.4rem !important;
                 margin-left: 0.4rem !important;
                 margin-right: 0.4rem !important;
             }
