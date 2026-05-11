@@ -3783,116 +3783,105 @@
                 display: block !important;
             }
             
-            /* 9) Footer - optimize column spacing for single-line text */
-            .footer-section:first-child {
-                padding-left: 0.25rem !important;
-                padding-right: 0.25rem !important;
+            /* 2) CURRENT ROLE & OCCUPATION - move title to top on mobile */
+            @media (max-width: 768px) {
+                /* Target the specific white container */
+                div[style*="background: white"][style*="padding: 2rem 3rem"][style*="margin: 3rem 0"] {
+                    padding: 1.5rem 1rem !important;
+                }
+                
+                /* Move h3 title above content */
+                div[style*="background: white"][style*="padding: 2rem 3rem"] > h3[style*="CURRENT ROLE"] {
+                    display: block !important;
+                    text-align: center !important;
+                    width: 100% !important;
+                    margin-bottom: 1.5rem !important;
+                }
+                
+                /* Stack the flex items vertically on mobile */
+                div[style*="display: flex; align-items: center; gap: 1rem"] {
+                    flex-direction: column !important;
+                    align-items: flex-start !important;
+                }
+                
+                div[style*="flex: 1; min-width: 250px"] {
+                    width: 100% !important;
+                    min-width: 100% !important;
+                }
+                
+                div[style*="flex: 2; display: flex; align-items: center"] {
+                    width: 100% !important;
+                }
             }
             
-            .footer-section[style*="margin-left: 6rem"] {
-                padding-right: 0.25rem !important;
-                padding-left: 0.25rem !important;
-                margin-left: 0.2rem !important;
-            }
-            
-            footer div[style*="display: grid"] {
-                gap: 0.5rem !important;
-                column-gap: 0.5rem !important;
-            }
-            
-            /* 2) CURRENT ROLE & OCCUPATION - move title above chart */
-            div:has(> h3:contains("CURRENT ROLE")) h3,
-            section[style*="background: #248aca"] h3:first-child {
-                text-align: center !important;
-                margin-bottom: 1rem !important;
-                display: block !important;
+            /* 3) Event Program - full width Conference Hall container */
+            .program-container,
+            .program-main {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
                 width: 100% !important;
+                max-width: 100% !important;
             }
             
-            /* 3) Event Program - remove all container padding/margins */
-            section[style*="background: #1a1a2e"],
-            div:has(> img[src*="Conference-Hall.jpg"]) {
+            .program-row {
                 padding-left: 0 !important;
                 padding-right: 0 !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
             }
             
-            section[style*="background: #1a1a2e"] > .container,
-            section[style*="background: #1a1a2e"] .container {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                max-width: 100% !important;
+            /* Conference Hall image container full width */
+            div[style*="width: 100%; height: 200px"] {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                border-radius: 0 !important;
             }
             
-            /* 4) View More Speakers - 4 per row like main speakers */
-            #additional-speakers > div[style*="grid-template-columns"] {
-                grid-template-columns: repeat(4, 1fr) !important;
-                gap: 0.8rem !important;
-            }
-            
-            .speaker-card {
-                width: 100% !important;
-            }
-            
-            /* 5) Add space between Google map and location container */
-            #venue iframe {
-                margin-bottom: 1.5rem !important;
-            }
-            
-            /* 6) Standardize ALL logo containers to match Participating Companies */
-            div[style*="background: white"],
-            div[style*="background: #ffffff"] {
-                aspect-ratio: 1 / 1 !important;
-                padding: 1.5rem !important;
-                display: flex !important;
-                align-items: center !important;
-                justify-content: center !important;
-                border-radius: 15px !important;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-            }
-            
-            /* Ensure uniform grid layouts for all partner sections */
-            div[style*="display: grid; grid-template-columns: 1fr 1fr"] {
+            /* 6) Standardize ALL sponsor/partner logos - mobile 2 per row */
+            .sponsors-grid,
+            div[style*="grid-template-columns: repeat(4, 1fr)"],
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 1rem !important;
             }
             
-            /* 7) Reduce padding on "Take the stage" quote container */
-            div[style*="background: rgba(0, 0, 0, 0.4)"][style*="padding: 2.5rem"] {
-                padding: 1.5rem 1rem !important;
+            /* All sponsor containers square and uniform */
+            div[style*="background: white"][style*="padding: 1.5rem"],
+            div[style*="background: white"][style*="padding: 2rem"] {
+                aspect-ratio: 1 / 1 !important;
+                padding: 1.5rem !important;
+                min-height: auto !important;
             }
             
-            /* 8) Reduce font size of "Take the stage" text */
-            div[style*="background: rgba(0, 0, 0, 0.4)"] h3 {
-                font-size: 1.25rem !important;
+            /* Venue and Media Partners - stack vertically on mobile */
+            div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
             }
             
-            div[style*="background: rgba(0, 0, 0, 0.4)"] p {
-                font-size: 1rem !important;
-                line-height: 1.7 !important;
+            /* Community Partners - 2 per row */
+            div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
             }
             
-            /* 9) CAREER PLANS - move title above chart */
-            div:has(> h3:contains("CAREER PLANS")) h3 {
+            /* 9) CAREER PLANS - move title to top */
+            div[style*="background: white"][style*="padding: 2rem 3rem"] h3[style*="CAREER PLANS"] {
+                display: block !important;
                 text-align: center !important;
-                margin-bottom: 1rem !important;
-                display: block !important;
                 width: 100% !important;
+                margin-bottom: 1.5rem !important;
             }
             
-            /* 10) Event Report image - 95% width */
+            /* 10) Event Report - 95% width with minimal padding */
+            div[style*="padding: 0 3rem"][style*="margin-bottom: 2rem"] {
+                padding: 0 2.5% !important;
+            }
+            
             img[src*="Event-Report-EN-1.png"] {
-                width: 95% !important;
-                max-width: 95% !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
-                display: block !important;
-            }
-            
-            div:has(> img[src*="Event-Report-EN-1.png"]) {
-                padding-left: 2.5% !important;
-                padding-right: 2.5% !important;
+                width: 100% !important;
             }
         }
 
