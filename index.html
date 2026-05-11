@@ -3443,16 +3443,67 @@
             }
             
             /* 5) Adjust What You'll Experience section */
-            /* 5A & 5B) 1 box per row and reduce title size */
+            /* 5A & 5B) 1 box per row with smaller titles */
+            
+            /* Target the features-grid class correctly */
+            .features-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            /* Reduce background image section height */
+            .feature-header {
+                height: 120px !important;
+            }
+            
+            /* Reduce icon size in feature header */
+            .feature-number {
+                font-size: 1.5rem !important;
+                width: 50px !important;
+                height: 50px !important;
+            }
+            
+            /* Reduce title size in feature cards */
+            .feature-card h4,
+            .feature-content h4 {
+                font-size: 0.85rem !important;
+                line-height: 1.25 !important;
+                margin-bottom: 0.5rem !important;
+                font-weight: 700 !important;
+            }
+            
+            /* 1) Display titles on single line - remove <br> effect */
+            .feature-content h4 br {
+                display: none !important;
+            }
+            
+            .feature-content h4 {
+                white-space: nowrap !important;
+                overflow: visible !important;
+            }
+            
+            .feature-card p,
+            .feature-content p {
+                font-size: 0.82rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* Ensure consistent box padding */
+            .feature-card {
+                margin-bottom: 0 !important;
+            }
+            
+            /* Legacy selectors for compatibility */
             div[style*="grid-template-columns: repeat(3, 1fr)"] {
                 grid-template-columns: 1fr !important;
                 gap: 1rem !important;
             }
             
             div[style*="grid-template-columns: repeat(3, 1fr)"] h3 {
-                font-size: 0.88rem !important;
-                line-height: 1.3 !important;
+                font-size: 0.85rem !important;
+                line-height: 1.25 !important;
                 margin-bottom: 0.5rem !important;
+                font-weight: 700 !important;
             }
             
             div[style*="grid-template-columns: repeat(3, 1fr)"] p {
@@ -3460,40 +3511,202 @@
                 line-height: 1.4 !important;
             }
             
+            /* Ensure boxes have consistent styling */
+            div[style*="grid-template-columns: repeat(3, 1fr)"] > div {
+                padding: 1.5rem 1.2rem !important;
+            }
+            
             /* 6) Optimize Event Program timeline section */
-            /* 6A) Reduce left padding of timeline */
+            /* 2) Minimum container padding - 2.5% left and 2.5% right (5% total) */
+            #program .container,
+            .program-container {
+                padding-left: 2.5% !important;
+                padding-right: 2.5% !important;
+            }
+            
+            /* Program row layout */
+            .program-row,
             .program-item,
             div[style*="display: flex; margin-bottom: 2rem"] {
-                padding-left: 0.2rem !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
                 margin-bottom: 1.5rem !important;
+                display: flex !important;
+                gap: 0 !important;
             }
             
-            /* 6B) Reduce width of time column */
+            /* 2) Time column - 12.5% width */
             .program-time,
             div[style*="min-width: 120px"] {
-                min-width: 42px !important;
-                max-width: 42px !important;
-                width: 42px !important;
+                width: 12.5% !important;
+                min-width: 12.5% !important;
+                max-width: 12.5% !important;
                 padding-left: 0 !important;
                 padding-right: 0.3rem !important;
-                font-size: 0.72rem !important;
+                font-size: 0.68rem !important;
+                flex-shrink: 0 !important;
             }
             
-            /* Allow descriptions to spread wider */
+            /* 2) Content column - 82.5% width */
             .program-details,
+            .program-session,
             div[style*="flex: 1; padding-left: 2rem"] {
-                flex: 1 !important;
-                padding-left: 0.3rem !important;
+                width: 82.5% !important;
+                flex: 0 0 82.5% !important;
+                padding-left: 0.4rem !important;
+                padding-right: 0 !important;
             }
             
-            .program-details h4 {
-                font-size: 0.82rem !important;
+            .program-details h4,
+            .program-session h4 {
+                font-size: 0.8rem !important;
                 margin-bottom: 0.3rem !important;
             }
             
-            .program-details p {
-                font-size: 0.75rem !important;
+            .program-details p,
+            .program-session p {
+                font-size: 0.72rem !important;
                 line-height: 1.35 !important;
+            }
+            
+            /* 1) Fix View More Speakers functionality on mobile */
+            #additional-speakers {
+                grid-column: 1 / -1 !important;
+                width: 100% !important;
+            }
+            
+            /* Make additional speakers grid responsive - 2 columns on mobile */
+            #additional-speakers > div {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+            
+            /* 2) Event Location - 95% width for all elements */
+            /* Target the venue image container specifically */
+            #venue div[style*="padding: 0 4rem"] {
+                padding: 0 2.5% !important;
+            }
+            
+            /* Venue image */
+            img[src*="HirePlanner-Events-Venue-Partner"] {
+                width: 95% !important;
+                max-width: 95% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* Venue container grid */
+            .venue-container,
+            div[style*="display: grid; grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                padding: 0 2.5% !important;
+            }
+            
+            /* Location details boxes */
+            .venue-container > div,
+            div[style*="background: rgba(255, 255, 255, 0.05)"] {
+                width: 95% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* Google Map iframe */
+            #venue iframe,
+            iframe[src*="google.com/maps"] {
+                width: 95% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* ========================================
+               COMPREHENSIVE MOBILE OPTIMIZATIONS - FINAL BATCH
+               ======================================== */
+            
+            /* 1) Why Attend Our Event - reduce height and match fonts */
+            .benefit-card-enhanced {
+                padding: 1rem !important;
+                margin-bottom: 0.8rem !important;
+                min-height: auto !important;
+            }
+            
+            .benefit-card-enhanced h3 {
+                font-size: 0.85rem !important;
+                line-height: 1.25 !important;
+                margin-bottom: 0.4rem !important;
+            }
+            
+            .benefit-card-enhanced p {
+                font-size: 0.82rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* 2-5) Sponsors & Partners - all square boxes, 2 per row */
+            div[style*="display: grid; grid-template-columns: 1fr 1fr"][style*="gap: 1rem"] > div {
+                aspect-ratio: 1 / 1 !important;
+                padding: 1.5rem !important;
+            }
+            
+            /* Remove left margin on odd children (first column) */
+            div[style*="display: grid; grid-template-columns: 1fr 1fr"] > div:nth-child(odd) {
+                margin-left: 0 !important;
+                padding-left: 1.5rem !important;
+            }
+            
+            /* Remove right margin on even children (second column) */
+            div[style*="display: grid; grid-template-columns: 1fr 1fr"] > div:nth-child(even) {
+                margin-right: 0 !important;
+                padding-right: 1.5rem !important;
+            }
+            
+            /* 6) Showcase Your Brand title */
+            section h2[style*="font-size: 2.2rem"] {
+                font-size: 1.6rem !important;
+            }
+            
+            /* 7) Floor Plan - wider spread */
+            img[alt*="Floor Plan"],
+            img[src*="Floor-Plan"] {
+                width: 95% !important;
+            }
+            
+            /* 8) Numbers from our last - reduce font */
+            section[style*="background: #248aca"] h2 {
+                font-size: 1.8rem !important;
+            }
+            
+            /* 9) Career Plans - match Current Role spacing */
+            section[style*="background: #248aca"] > div > div[style*="background: white"] {
+                padding: 1.2rem 0.8rem !important;
+                margin-left: 0.5rem !important;
+                margin-right: 0.5rem !important;
+            }
+            
+            /* 10) Testimonials - 1 per row */
+            div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem"] {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            /* 11) Event Report image - wider */
+            img[src*="Event-Report-EN"] {
+                width: 95% !important;
+            }
+            
+            /* 12) Join Our Next Event - smaller */
+            h2:nth-of-type(n) {
+                font-size: 1.8rem !important;
+            }
+            
+            /* 13) Footer - closer columns */
+            footer div[style*="display: grid"] {
+                gap: 1.5rem !important;
+                column-gap: 2rem !important;
+            }
+            
+            /* Target JOBS IN JAPAN column specifically */
+            .footer-section[style*="margin-left: 6rem"] {
+                margin-left: 0.5rem !important;
+                padding-left: 0.5rem !important;
             }
         }
 
