@@ -3783,38 +3783,69 @@
                 display: block !important;
             }
             
-            /* 2) CURRENT ROLE & OCCUPATION - move title to top on mobile */
-            @media (max-width: 768px) {
-                /* Target the specific white container */
-                div[style*="background: white"][style*="padding: 2rem 3rem"][style*="margin: 3rem 0"] {
-                    padding: 1.5rem 1rem !important;
-                }
-                
-                /* Move h3 title above content */
-                div[style*="background: white"][style*="padding: 2rem 3rem"] > h3[style*="CURRENT ROLE"] {
-                    display: block !important;
-                    text-align: center !important;
-                    width: 100% !important;
-                    margin-bottom: 1.5rem !important;
-                }
-                
-                /* Stack the flex items vertically on mobile */
-                div[style*="display: flex; align-items: center; gap: 1rem"] {
-                    flex-direction: column !important;
-                    align-items: flex-start !important;
-                }
-                
-                div[style*="flex: 1; min-width: 250px"] {
-                    width: 100% !important;
-                    min-width: 100% !important;
-                }
-                
-                div[style*="flex: 2; display: flex; align-items: center"] {
-                    width: 100% !important;
-                }
+            /* 4) Optimize Current Role & Occupation section */
+            /* Target parent container with outer padding */
+            div[style*="max-width: 1200px"][style*="padding: 0 3rem"] {
+                padding: 0 0.5rem !important;
             }
             
-            /* 3) Event Program - full width Conference Hall container */
+            /* Target the white container itself */
+            div[style*="background: white; border-radius: 15px; padding: 2rem 3rem"] {
+                padding: 1.2rem 0.8rem !important;
+                margin: 1.5rem 0 !important;
+            }
+            
+            /* Alternative selector - target any white background container in stats section */
+            section[style*="background: #248aca"] div[style*="background: white"] {
+                padding: 1.2rem 0.8rem !important;
+            }
+            
+            /* Legacy selector kept for compatibility */
+            div[style*="background: #ffffff; padding: 3rem; border-radius: 15px"] {
+                padding: 1.2rem 0.8rem !important;
+                margin-left: 0.5rem !important;
+                margin-right: 0.5rem !important;
+                width: calc(100% - 1rem) !important;
+            }
+            
+            /* 4B) Reduce inner spacing - role labels and percentages */
+            div[style*="display: flex; align-items: center; gap: 1rem"] {
+                padding-left: 0.2rem !important;
+                padding-right: 45px !important;
+                margin-bottom: 0.6rem !important;
+                gap: 0.4rem !important;
+            }
+            
+            /* Move text closer to left border */
+            div[style*="display: flex; align-items: center; gap: 1rem"] > div[style*="flex: 1"] {
+                padding-left: 0 !important;
+                padding-right: 0.2rem !important;
+                font-size: 0.7rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            /* Make progress bars wider */
+            div[style*="display: flex; align-items: center; gap: 1rem"] > div[style*="flex: 2"] {
+                flex: 3.5 !important;
+            }
+            
+            /* 3) Event Program - full width purple container (reduce black sides) */
+            #program {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            #program .container {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                max-width: 100% !important;
+            }
+            
+            #program .section-header {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
             .program-container,
             .program-main {
                 padding-left: 0 !important;
@@ -3832,48 +3863,108 @@
                 margin-right: 0 !important;
             }
             
-            /* Conference Hall image container full width */
+            /* Conference Hall image container - no rounded corners for full width effect */
             div[style*="width: 100%; height: 200px"] {
                 margin-left: 0 !important;
                 margin-right: 0 !important;
                 border-radius: 0 !important;
             }
             
-            /* 6) Standardize ALL sponsor/partner logos - mobile 2 per row */
-            .sponsors-grid,
-            div[style*="grid-template-columns: repeat(4, 1fr)"],
-            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 1rem !important;
+            /* Time slots and content */
+            .program-time {
+                padding-left: 1rem !important;
             }
             
-            /* All sponsor containers square and uniform */
+            .program-session {
+                padding-right: 1rem !important;
+            }
+            
+            /* 6) STANDARDIZE ALL LOGO CONTAINERS - Match Participating Companies exactly */
+            
+            /* Force ALL white logo containers to have identical styling */
+            div[style*="background: white"][style*="border-radius: 15px"],
             div[style*="background: white"][style*="padding: 1.5rem"],
             div[style*="background: white"][style*="padding: 2rem"] {
-                aspect-ratio: 1 / 1 !important;
+                background: white !important;
                 padding: 1.5rem !important;
-                min-height: auto !important;
+                border-radius: 15px !important;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                min-height: 120px !important;
+                aspect-ratio: 1 / 1 !important;
             }
             
-            /* Venue and Media Partners - stack vertically on mobile */
+            /* Main Organizer - 2 per row on mobile */
+            div:has(> h3:contains("Main Organizer")) + div,
+            h3:contains("✦ Main Organizer") ~ div {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            
+            /* Event Sponsors - 2 per row on mobile */
+            .sponsors-grid,
+            div[style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            
+            /* Participating Companies - 2 per row on mobile */
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            
+            /* Venue Partner & Media Partner - stack vertically, 1 per row each */
             div[style*="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem"] {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
             }
             
-            /* Community Partners - 2 per row */
-            div[style*="display: grid; grid-template-columns: repeat(3, 1fr)"] {
+            /* Venue Partner container - 2 per row */
+            div:has(> h3:contains("Venue Partner")) div[style*="display: flex"],
+            h3:contains("✦ Venue Partner") ~ div[style*="display: flex"] {
+                display: grid !important;
                 grid-template-columns: repeat(2, 1fr) !important;
-                gap: 1rem !important;
+                gap: 1.5rem !important;
             }
             
-            /* 9) CAREER PLANS - move title to top */
-            div[style*="background: white"][style*="padding: 2rem 3rem"] h3[style*="CAREER PLANS"] {
-                display: block !important;
-                text-align: center !important;
-                width: 100% !important;
-                margin-bottom: 1.5rem !important;
+            /* Media Partner container - 2 per row */
+            div:has(> h3:contains("Media Partner")) div[style*="display: flex"],
+            h3:contains("✦ Media Partner") ~ div[style*="display: flex"] {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
             }
+            
+            /* Community Partners - 2 per row on mobile */
+            div:has(> h3:contains("Community Partners")) div[style*="display: flex"],
+            h3:contains("✦ Community Partners") ~ div[style*="display: flex"] {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+            
+            /* All logo images - uniform max size */
+            div[style*="background: white"] img {
+                max-width: 160px !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+            
+            /* 9) CAREER PLANS - center title above chart (match screenshot) */
+            /* Target the specific h3 with color #2565a8 */
+            h3[style*="color: #2565a8"][style*="CAREER PLANS"] {
+                text-align: center !important;
+                display: block !important;
+                width: 100% !important;
+            }
+            
+            /* Career Plans chart rows use same structure as CURRENT ROLE */
+            /* The flex-direction: column rules above already apply to career plans rows too */
+            /* because they match: div[style*="display: flex; align-items: center; gap: 1rem"] */
             
             /* 10) Event Report - 95% width with minimal padding */
             div[style*="padding: 0 3rem"][style*="margin-bottom: 2rem"] {
