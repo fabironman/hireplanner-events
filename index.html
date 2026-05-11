@@ -3708,9 +3708,99 @@
                 margin-left: 0.5rem !important;
                 padding-left: 0.5rem !important;
             }
+            
+            /* 1) Reduce font size of feature card descriptions */
+            .feature-content p,
+            .feature-card p {
+                font-size: 0.75rem !important;
+                line-height: 1.35 !important;
+            }
+            
+            /* 2) Event Program - remove all side padding */
+            section[style*="background: #1a1a2e"] .container,
+            .program-timeline {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            /* 3) View More Speakers - ensure grid displays properly */
+            #additional-speakers {
+                display: none !important;
+            }
+            
+            #additional-speakers[style*="display: block"],
+            #additional-speakers.show {
+                display: block !important;
+            }
+            
+            #additional-speakers > div[style*="grid-template-columns: repeat(7, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+            
+            /* 4) Center Google Map */
+            #venue iframe {
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* 5) Center Location venue box */
+            #venue div[style*="background: rgba(255, 255, 255, 0.05)"] {
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+            
+            /* 6) Reduce testimonial text size */
+            .testimonial-card p,
+            div[style*="font-size: 1rem; line-height: 1.8"] {
+                font-size: 0.9rem !important;
+                line-height: 1.7 !important;
+            }
+            
+            /* 7) All logo containers same size - square with consistent padding */
+            div[style*="background: white"][style*="border-radius"] img,
+            div[style*="background: #ffffff"][style*="border-radius"] img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
+            
+            div[style*="background: white"][style*="border-radius"],
+            div[style*="background: #ffffff"][style*="border-radius"] {
+                aspect-ratio: 1 / 1 !important;
+                padding: 1.5rem !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+            
+            /* 8) Event Report - 90% width */
+            img[src*="Event-Report-EN-1.png"] {
+                width: 90% !important;
+                max-width: 90% !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                display: block !important;
+            }
+            
+            /* 9) Footer - optimize column spacing */
+            .footer-section:first-child {
+                padding-left: 0.5rem !important;
+            }
+            
+            .footer-section[style*="margin-left: 6rem"] {
+                padding-right: 0.5rem !important;
+                margin-left: 0.3rem !important;
+            }
+            
+            footer div[style*="display: grid"] {
+                gap: 0.8rem !important;
+                column-gap: 0.8rem !important;
+            }
         }
 
         </style>
+
 </head>
 <body id="top">
     <!-- Floating CTAs Container -->
@@ -3972,7 +4062,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 3rem; padding: 2rem; max-width: 900px; margin-left: auto; margin-right: auto;">
-                <p style="font-size: 1.2rem; line-height: 1.8; color: #ffffff; font-weight: 400;">Get ready for a night of inspiration and networking as we come together to celebrate Japan's top IT and Technology players and explore what makes them truly exceptional!</p>
+                <p style="font-size: 1.2rem; line-height: 1.8; color: #b8bcc4; font-weight: 400;">Get ready for a night of inspiration and networking as we come together to celebrate Japan's top IT and Technology players and explore what makes them truly exceptional!</p>
             </div>
             
             <div class="about-content" style="margin-top: 4rem; display: none;">
