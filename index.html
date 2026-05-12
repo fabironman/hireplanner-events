@@ -2910,24 +2910,24 @@
             
             /* ========================================
                STANDARDIZED LOGO CONTAINER STYLING
-               (Square containers: 175px x 175px fixed size)
+               (Square containers: 170px x 170px fixed size)
                ======================================== */
             
             /* All logo containers - standardized dimensions and styling */
             #participants div[style*="background: white"] {
                 background: white !important;
-                padding: 0.25px !important;
+                padding: 0.2px !important;
                 border-radius: 15px !important;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                width: 175px !important;
-                height: 175px !important;
-                min-width: 175px !important;
-                max-width: 175px !important;
-                min-height: 175px !important;
-                max-height: 175px !important;
+                width: 170px !important;
+                height: 170px !important;
+                min-width: 170px !important;
+                max-width: 170px !important;
+                min-height: 170px !important;
+                max-height: 170px !important;
             }
             
             /* All logo images - standardized sizing */
@@ -2951,8 +2951,8 @@
             }
             
             #participants > div > div:nth-child(1) > div[style*="display: flex"] > div {
-                width: 175px !important;
-                max-width: 175px !important;
+                width: 170px !important;
+                max-width: 170px !important;
                 margin: 0 auto !important;
             }
             
@@ -3013,8 +3013,8 @@
             }
             
             #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(1) > div[style*="display: flex"] > div {
-                width: 175px !important;
-                max-width: 175px !important;
+                width: 170px !important;
+                max-width: 170px !important;
                 margin: 0 auto !important;
             }
             
@@ -3037,8 +3037,8 @@
             }
             
             #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(2) > div[style*="display: flex"] > div {
-                width: 175px !important;
-                max-width: 175px !important;
+                width: 170px !important;
+                max-width: 170px !important;
                 margin: 0 auto !important;
             }
             
@@ -3978,6 +3978,39 @@
             div[style*="font-size: 1rem; line-height: 1.8"] {
                 font-size: 0.9rem !important;
                 line-height: 1.7 !important;
+            }
+            
+            /* NEW MOBILE ADJUSTMENTS */
+            
+            /* 2) Reduce padding on "Showcase Your Brand" section */
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* 3) Reduce outside padding on "Take the stage" container */
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] > div {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            /* 4) Reduce inside padding on "Take the stage" text container */
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] div[style*="background: rgba(0, 0, 0, 0.3)"] {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* 5) Remove black background spacing around "Join Our Next Event" */
+            /* Remove padding from containers before Join Our Next Event */
+            section#final-cta {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            
+            /* Target any spacing divs around the final CTA */
+            div[style*="height: 3rem"][style*="background: #0f1823"],
+            div[style*="height: 3rem"][style*="background: #0a1128"] {
+                display: none !important;
             }
             
             /* 7) All logo containers same size - square with consistent padding */
