@@ -4001,16 +4001,38 @@
             }
             
             /* 5) Remove black background spacing around "Join Our Next Event" */
-            /* Remove padding from containers before Join Our Next Event */
+            /* Remove all margins and padding that create dark gaps */
             section#final-cta {
                 margin-top: 0 !important;
                 margin-bottom: 0 !important;
+                padding-top: 3rem !important;
+                padding-bottom: 3rem !important;
             }
             
-            /* Target any spacing divs around the final CTA */
-            div[style*="height: 3rem"][style*="background: #0f1823"],
-            div[style*="height: 3rem"][style*="background: #0a1128"] {
-                display: none !important;
+            /* Remove bottom margin from Event Report section above blue CTA */
+            section[style*="background: #ffffff"][style*="padding: 4rem 0"][style*="margin: 2rem 0"] {
+                margin-bottom: 0 !important;
+            }
+            
+            /* Remove padding from the testimonials wrapper that creates spacing */
+            section[style*="background: #ffffff"][style*="padding: 4rem 2rem"] {
+                padding-bottom: 0 !important;
+            }
+            
+            /* Ensure the full-width white wrapper section extends to blue CTA */
+            section[style*="width: 100vw"][style*="background: #ffffff"] {
+                padding-bottom: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            
+            /* 6) Reduce padding on left side of Universal Studios logo (Event Sponsors) */
+            .sponsors-grid > div:first-child {
+                padding-left: 0 !important;
+            }
+            
+            /* 7) Reduce padding on left side of Venue Partner logo */
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(1) > div[style*="display: flex"] {
+                padding-left: 0 !important;
             }
             
             /* 7) All logo containers same size - square with consistent padding */
@@ -4230,6 +4252,7 @@
             img[src*="Event-Report-EN-1.png"] {
                 width: 100% !important;
             }
+            
         }
 
         </style>
@@ -5970,8 +5993,6 @@
                     </div>
                 </section>
                 
-                    </div>
-                </section>
                 
                 <!-- Join Our Next Event Section -->
                 <section id="final-cta" style="background: linear-gradient(135deg, #2babfa 0%, #1a8fd9 100%); padding: 5rem 2rem; text-align: center; margin: 0;">
@@ -5999,7 +6020,7 @@
                         </div>
                     </div>
                 </section>
-            </div>
+    
             
             <!-- Strip 4: READ MORE/LESS Button -->
             <section style="background: #ffc107; padding: 0.8rem 0; margin: 0;">
