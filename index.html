@@ -2471,6 +2471,22 @@
             box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
         }
         
+        /* Desktop: show desktop version, hide mobile version */
+        @media (min-width: 769px) {
+            .role-desktop-version {
+                display: block !important;
+            }
+            
+            .role-mobile-version {
+                display: none !important;
+            }
+            
+            /* Desktop padding for white box */
+            .role-chart-white-box {
+                padding: 2rem 3rem !important;
+            }
+        }
+        
         /* Medium screens - when title wraps but not mobile yet */
         @media (max-width: 1200px) and (min-width: 769px) {
             /* Hero section - center and stack when wrapping */
@@ -2734,43 +2750,59 @@
                 margin-top: 0.3rem !important;
             }
             
-            /* 7) Current Role & Occupation chart - fix bar display */
-            .role-item {
-                margin-bottom: 0.7rem !important;
-                padding-right: 50px !important;
+            /* 7) Current Role & Occupation chart - MOBILE LAYOUT with minimal padding */
+            
+            /* Mobile: hide desktop version, show mobile version */
+            .role-desktop-version {
+                display: none !important;
             }
             
-            .role-label {
-                font-size: 0.75rem !important;
-                margin-bottom: 0.25rem !important;
-                line-height: 1.2 !important;
+            .role-mobile-version {
+                display: block !important;
             }
             
-            .role-bar-container {
-                height: 26px !important;
-                position: relative !important;
-                background: rgba(255, 255, 255, 0.1) !important;
-                border-radius: 4px !important;
-                overflow: visible !important;
+            /* Outer wrapper - reduce side padding on mobile */
+            .role-chart-white-box {
+                padding: 0.2rem 0.1rem 0.2rem 0.1rem !important;
+            }
+            
+            /* Also reduce padding on the max-width container */
+            div[style*="max-width: 1200px"] > div.role-chart-white-box {
+                margin: 2rem 0 !important;
+            }
+            
+            div[style*="max-width: 1200px"]:has(.role-chart-white-box) {
+                padding: 0 0.5rem !important;
+            }
+            
+            /* Title - minimal bottom margin */
+            .role-mobile-version h3 {
+                margin-top: 0 !important;
+                margin-bottom: 0.5rem !important;
+                padding: 0 !important;
+                font-size: 0.95rem !important;
+            }
+            
+            /* Table - full width */
+            .role-mobile-version table {
+                padding: 0 !important;
+                margin: 0 !important;
                 width: 100% !important;
             }
             
-            .role-bar {
-                height: 100% !important;
-                border-radius: 4px !important;
-                position: relative !important;
-                transition: width 0.5s ease !important;
+            /* Left column (labels) - no left padding */
+            .role-mobile-version table td:first-child {
+                padding: 0.35rem 0.4rem 0.35rem 0 !important;
             }
             
-            .role-percentage {
-                position: absolute !important;
-                right: -48px !important;
-                top: 50% !important;
-                transform: translateY(-50%) !important;
-                font-size: 0.8rem !important;
-                font-weight: 700 !important;
-                white-space: nowrap !important;
-                z-index: 10 !important;
+            /* Middle column (bars) - minimal side padding */
+            .role-mobile-version table td:nth-child(2) {
+                padding: 0.35rem 0.4rem !important;
+            }
+            
+            /* Right column (percentages) - no right padding */
+            .role-mobile-version table td:last-child {
+                padding: 0.35rem 0 0.35rem 0.4rem !important;
             }
             
             /* 8) What You'll Experience - 1 box per row */
@@ -2868,39 +2900,160 @@
                 line-height: 1.3 !important;
             }
             
-            /* 2) Previous Event Sponsors & Partners */
-            /* Target the "Participating Companies" grid specifically */
-            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 0.8rem !important;
-                padding: 0 !important;
+            /* 2) Previous Event Sponsors & Partners - MOBILE OPTIMIZATION */
+            
+            /* All sponsor/partner sections - add padding for row structure */
+            #participants {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
             
-            /* a) All logos same size - target all sponsor/partner images */
-            .sponsors-grid img,
-            div[style*="grid-template-columns: repeat(auto-fit"] img {
-                max-height: 80px !important;
-                max-width: 100% !important;
+            /* ========================================
+               STANDARDIZED LOGO CONTAINER STYLING
+               (Square containers: 200px x 200px with rounded corners)
+               ======================================== */
+            
+            /* All logo containers - standardized dimensions and styling */
+            #participants div[style*="background: white"] {
+                background: white !important;
+                padding: 1px !important;
+                border-radius: 15px !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: 200px !important;
+                height: 200px !important;
+                min-width: 200px !important;
+                max-width: 200px !important;
+                min-height: 200px !important;
+                max-height: 200px !important;
+            }
+            
+            /* All logo images - standardized sizing */
+            #participants div[style*="background: white"] img {
+                max-width: 95% !important;
+                max-height: 95% !important;
                 width: auto !important;
                 height: auto !important;
                 object-fit: contain !important;
             }
             
-            /* b) Event Sponsors grid - 2 per row on mobile */
+            /* ========================================
+               MAIN ORGANIZER - Single centered logo
+               ======================================== */
+            
+            #participants > div > div:nth-child(1) > div[style*="display: flex"] {
+                display: flex !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                width: 100% !important;
+            }
+            
+            #participants > div > div:nth-child(1) > div[style*="display: flex"] > div {
+                width: 200px !important;
+                max-width: 200px !important;
+                margin: 0 auto !important;
+            }
+            
+            /* ========================================
+               EVENT SPONSORS - 2 per row grid
+               ======================================== */
+            
             .sponsors-grid {
-                grid-template-columns: repeat(2, 1fr) !important;
-                gap: 0.8rem !important;
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+                padding: 0 1rem !important;
+                max-width: 100% !important;
+                justify-items: center !important;
             }
             
-            /* c) & d) Reduce padding on first and second boxes */
-            div[style*="grid-template-columns: repeat(auto-fit"] > div:nth-child(odd),
-            .sponsors-grid > div:nth-child(odd) {
-                padding-left: 0.5rem !important;
+            /* ========================================
+               PARTICIPATING COMPANIES - 2 per row grid
+               ======================================== */
+            
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+                row-gap: 1rem !important;
+                padding: 0 1rem !important;
+                max-width: 100% !important;
+                justify-items: center !important;
             }
             
-            div[style*="grid-template-columns: repeat(auto-fit"] > div:nth-child(even),
-            .sponsors-grid > div:nth-child(even) {
-                padding-right: 0.5rem !important;
+            /* ========================================
+               VENUE & MEDIA PARTNERS - Side by side on same row
+               ======================================== */
+            
+            /* Keep the parent container as a grid with 2 columns */
+            div[style*="grid-template-columns: 1fr 1fr"]:has(h3) {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            /* Venue Partner - center title */
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(1) {
+                text-align: center !important;
+            }
+            
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(1) h3 {
+                text-align: center !important;
+            }
+            
+            /* Venue Partner container - centered */
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(1) > div[style*="display: flex"] {
+                display: flex !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+            }
+            
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(1) > div[style*="display: flex"] > div {
+                width: 200px !important;
+                max-width: 200px !important;
+                margin: 0 auto !important;
+            }
+            
+            /* Media Partner - center title */
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(2) {
+                text-align: center !important;
+            }
+            
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(2) h3 {
+                text-align: center !important;
+            }
+            
+            /* Media Partner container - centered */
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(2) > div[style*="display: flex"] {
+                display: flex !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                margin: 0 auto !important;
+                width: 100% !important;
+            }
+            
+            #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(2) > div[style*="display: flex"] > div {
+                width: 200px !important;
+                max-width: 200px !important;
+                margin: 0 auto !important;
+            }
+            
+            /* ========================================
+               COMMUNITY PARTNERS - 2 per row grid
+               ======================================== */
+            
+            #participants > div > div:last-of-type > div[style*="display: flex"] {
+                display: grid !important;
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem !important;
+                row-gap: 1rem !important;
+                padding: 0 1rem !important;
+                flex-wrap: nowrap !important;
+                justify-items: center !important;
             }
             
             /* 3) How it works - reduce box height */
@@ -3723,7 +3876,7 @@
                 padding-right: 0 !important;
             }
             
-            /* 3) View More Speakers - ensure grid displays properly */
+            /* 3) View More Speakers - ensure grid displays properly (4 per row) */
             #additional-speakers {
                 display: none !important;
             }
@@ -3734,15 +3887,77 @@
             }
             
             #additional-speakers > div[style*="grid-template-columns: repeat(7, 1fr)"] {
-                grid-template-columns: repeat(2, 1fr) !important;
+                grid-template-columns: repeat(4, 1fr) !important;
                 gap: 1rem !important;
             }
             
-            /* 4) Center Google Map */
+            /* 4) Remove padding from Google Map container */
+            #venue {
+                padding: 0 !important;
+            }
+            
+            #venue > div {
+                padding: 0 !important;
+            }
+            
             #venue iframe {
                 display: block !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            
+            /* 5) Reduce padding on "Take the stage" section */
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] > div {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* 6) Reduce font size of "Take the stage" heading and text */
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] p {
+                font-size: 0.9rem !important;
+            }
+            
+            /* 7) Reduce padding on testimonials containers */
+            div[style*="background: #f8f9fa"][style*="padding: 2.5rem"] {
+                padding: 1.5rem !important;
+            }
+            
+            /* 7a) Reduce left/right padding on testimonials section to 2% */
+            section:has(h3:contains("What Companies")) {
+                padding-left: 2% !important;
+                padding-right: 2% !important;
+            }
+            
+            /* Alternative selector for testimonials section */
+            section[style*="background: #ffffff"][style*="padding: 4rem 2rem"]:has(div[style*="grid-template-columns: 1fr 1fr"]) {
+                padding-left: 2% !important;
+                padding-right: 2% !important;
+            }
+            
+            /* 8) Make event report image match stage image settings */
+            /* Stage image container settings */
+            div[style*="max-width: 750px"][style*="margin: 0 auto 3rem"] {
+                padding: 0 !important;
+            }
+            
+            /* Report image: remove padding from parent container */
+            div:has(img[src*="HirePlanner-Tokyo-Tech-Meetup-x-IT-Career-Event-Report-EN-1.png"]) {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                max-width: 750px !important;
+                margin: 0 auto 3rem !important;
+            }
+            
+            /* Report image itself: match stage image styling */
+            img[src*="HirePlanner-Tokyo-Tech-Meetup-x-IT-Career-Event-Report-EN-1.png"] {
+                width: 100% !important;
+                height: auto !important;
+                border-radius: 15px !important;
+                display: block !important;
             }
             
             /* 5) Center Location venue box */
@@ -3861,6 +4076,7 @@
                 padding-right: 0 !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
+                gap: 1rem !important; /* Add space between time and session columns */
             }
             
             /* Conference Hall image container - no rounded corners for full width effect */
@@ -4291,64 +4507,8 @@
             
             <!-- Role Distribution Chart - Between Row 1 and Row 2 -->
             <div style="max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 3rem;">
-                <div style="background: white; border-radius: 15px; padding: 2rem 3rem; margin: 3rem 0; box-shadow: var(--shadow-lg);">
-                    <h3 style="color: #0a1128; font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;">CURRENT ROLE & OCCUPATION</h3>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
-                        <!-- Tech Professionals -->
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="flex: 1; min-width: 250px; color: #6c757d; font-size: 0.9rem;">Tech Professionals (Engineer, Developer, CTO)</div>
-                            <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                <div style="background: linear-gradient(90deg, #2babfa 0%, #1a8fd9 100%); height: 32px; border-radius: 4px; width: 87.6%;"></div>
-                                <span style="color: #2babfa; font-weight: 700; font-size: 1.05rem; min-width: 50px;">43.8%</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Business & Growth -->
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="flex: 1; min-width: 250px; color: #6c757d; font-size: 0.9rem;">Business & Growth (Sales, Marketing, Operations)</div>
-                            <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                <div style="background: linear-gradient(90deg, #ff9800 0%, #f57c00 100%); height: 32px; border-radius: 4px; width: 51.4%;"></div>
-                                <span style="color: #ff9800; font-weight: 700; font-size: 1.05rem; min-width: 50px;">25.7%</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Student / Aspiring Tech Talent -->
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="flex: 1; min-width: 250px; color: #6c757d; font-size: 0.9rem;">Student / Aspiring Tech Talent</div>
-                            <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                <div style="background: linear-gradient(90deg, #4caf50 0%, #388e3c 100%); height: 32px; border-radius: 4px; width: 14.8%;"></div>
-                                <span style="color: #4caf50; font-weight: 700; font-size: 1.05rem; min-width: 50px;">7.4%</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Founder / Executive -->
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="flex: 1; min-width: 250px; color: #6c757d; font-size: 0.9rem;">Founder / Executive</div>
-                            <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                <div style="background: linear-gradient(90deg, #ffc107 0%, #f9a825 100%); height: 32px; border-radius: 4px; width: 13.6%;"></div>
-                                <span style="color: #ffc107; font-weight: 700; font-size: 1.05rem; min-width: 50px;">6.8%</span>
-                            </div>
-                        </div>
-                        
-                        <!-- HR / Talent Acquisition -->
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="flex: 1; min-width: 250px; color: #6c757d; font-size: 0.9rem;">HR / Talent Acquisition</div>
-                            <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                <div style="background: linear-gradient(90deg, #f44336 0%, #d32f2f 100%); height: 32px; border-radius: 4px; width: 13.2%;"></div>
-                                <span style="color: #f44336; font-weight: 700; font-size: 1.05rem; min-width: 50px;">6.6%</span>
-                            </div>
-                        </div>
-                        
-                        <!-- Other -->
-                        <div style="display: flex; align-items: center; gap: 1rem;">
-                            <div style="flex: 1; min-width: 250px; color: #6c757d; font-size: 0.9rem;">Other</div>
-                            <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                <div style="background: linear-gradient(90deg, #909399 0%, #7a7e85 100%); height: 32px; border-radius: 4px; width: 19.2%;"></div>
-                                <span style="color: #7a7e85; font-weight: 700; font-size: 1.05rem; min-width: 50px;">9.6%</span>
-                            </div>
-                        </div>
-                    </div>
+                <div style="text-align: center; margin: 3rem 0;">
+                    <img src="https://home.hireplanner.com/wp-content/uploads/2026/05/Current-Role-Occupation.png" alt="Current Role & Occupation" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
                 </div>
             </div>
         </div>
@@ -5178,7 +5338,7 @@
                 <h3 style="font-size: 1.3rem; margin-bottom: 1.5rem; color: #2babfa;">✦ Main Organizer</h3>
                 <div style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center;">
                     <div style="background: white; padding: 2rem; border-radius: 15px; box-shadow: var(--shadow-md);">
-                        <img src="https://home.hireplanner.com/wp-content/uploads/2026/04/Venture-Cafe-Logo-Square.jpg" alt="Venture Café Tokyo" style="max-width: 260px; height: auto;">
+                        <img src="https://home.hireplanner.com/wp-content/uploads/2026/05/HirePlanner-Logo-Square.jpg" alt="HirePlanner" style="max-width: 260px; height: auto;">
                     </div>
                 </div>
             </div>
@@ -5285,7 +5445,7 @@
                         <img src="https://home.hireplanner.com/wp-content/uploads/2026/03/Logo-CIC-Tokyo.png" alt="CIC Tokyo" style="max-width: 180px; height: auto;">
                     </div>
                     <div style="background: white; padding: 1.5rem; border-radius: 15px; box-shadow: var(--shadow-md);">
-                        <img src="https://home.hireplanner.com/wp-content/uploads/2026/04/HirePlanner-Logo-Square.jpg" alt="HirePlanner" style="max-width: 180px; height: auto;">
+                        <img src="https://home.hireplanner.com/wp-content/uploads/2026/05/Venture-Cafe-Logo-Square.jpg" alt="Venture Café Tokyo" style="max-width: 180px; height: auto;">
                     </div>
                 </div>
             </div>
@@ -5555,60 +5715,8 @@
                         
                         <!-- Career Plans Chart -->
                         <div style="max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 3rem;">
-                            <div style="background: white; border-radius: 15px; padding: 2rem 3rem; margin: 3rem 0; box-shadow: var(--shadow-lg);">
-                                <h3 style="color: #2565a8; font-size: 1.1rem; font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px;">CAREER PLANS</h3>
-                                <div style="border-bottom: 3px solid #e5e7eb; margin-bottom: 2rem;"></div>
-                                
-                                <div style="display: flex; flex-direction: column; gap: 1.8rem;">
-                                    <!-- Actively looking for new roles -->
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                        <div style="flex: 1; min-width: 280px; color: #333; font-size: 1rem;">Actively looking for new roles</div>
-                                        <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                            <div style="position: relative; width: 100%; height: 20px; background: #e5e7eb; border-radius: 10px; overflow: hidden;">
-                                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 15%; background: linear-gradient(90deg, #2d7a4f 0%, #1f5d3a 100%); border-radius: 10px;"></div>
-                                            </div>
-                                            <span style="color: #2565a8; font-weight: 700; font-size: 1.1rem; min-width: 60px;">15%</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Passively exploring opportunities -->
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                        <div style="flex: 1; min-width: 280px; color: #333; font-size: 1rem;">Passively exploring opportunities</div>
-                                        <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                            <div style="position: relative; width: 100%; height: 20px; background: #e5e7eb; border-radius: 10px; overflow: hidden;">
-                                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 35%; background: linear-gradient(90deg, #2565a8 0%, #1a4d7f 100%); border-radius: 10px;"></div>
-                                            </div>
-                                            <span style="color: #2565a8; font-weight: 700; font-size: 1.1rem; min-width: 60px;">35%</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Open to new opportunities -->
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                        <div style="flex: 1; min-width: 280px; color: #333; font-size: 1rem;">Open to new opportunities</div>
-                                        <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                            <div style="position: relative; width: 100%; height: 20px; background: #e5e7eb; border-radius: 10px; overflow: hidden;">
-                                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 31%; background: linear-gradient(90deg, #2565a8 0%, #1a4d7f 100%); border-radius: 10px;"></div>
-                                            </div>
-                                            <span style="color: #2565a8; font-weight: 700; font-size: 1.1rem; min-width: 60px;">31%</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Not currently looking -->
-                                    <div style="display: flex; align-items: center; gap: 1rem;">
-                                        <div style="flex: 1; min-width: 280px; color: #333; font-size: 1rem;">Not currently looking</div>
-                                        <div style="flex: 2; display: flex; align-items: center; gap: 0.5rem;">
-                                            <div style="position: relative; width: 100%; height: 20px; background: #e5e7eb; border-radius: 10px; overflow: hidden;">
-                                                <div style="position: absolute; left: 0; top: 0; height: 100%; width: 19%; background: #c0c4cc; border-radius: 10px;"></div>
-                                            </div>
-                                            <span style="color: #2565a8; font-weight: 700; font-size: 1.1rem; min-width: 60px;">19%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Summary text -->
-                                <p style="margin-top: 2rem; color: #8a8e96; font-size: 0.95rem; line-height: 1.6;">
-                                    81% of attendees were actively or passively open to new opportunities at the time of the event.
-                                </p>
+                            <div style="text-align: center; margin: 3rem 0;">
+                                <img src="https://home.hireplanner.com/wp-content/uploads/2026/05/Career-Plans.png" alt="Career Plans" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
                             </div>
                         </div>
                     </div>
