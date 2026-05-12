@@ -2910,24 +2910,24 @@
             
             /* ========================================
                STANDARDIZED LOGO CONTAINER STYLING
-               (Square containers: 200px x 200px with rounded corners)
+               (Square containers: 175px x 175px fixed size)
                ======================================== */
             
             /* All logo containers - standardized dimensions and styling */
             #participants div[style*="background: white"] {
                 background: white !important;
-                padding: 1px !important;
+                padding: 0.25px !important;
                 border-radius: 15px !important;
                 box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
                 display: flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                width: 200px !important;
-                height: 200px !important;
-                min-width: 200px !important;
-                max-width: 200px !important;
-                min-height: 200px !important;
-                max-height: 200px !important;
+                width: 175px !important;
+                height: 175px !important;
+                min-width: 175px !important;
+                max-width: 175px !important;
+                min-height: 175px !important;
+                max-height: 175px !important;
             }
             
             /* All logo images - standardized sizing */
@@ -2951,8 +2951,8 @@
             }
             
             #participants > div > div:nth-child(1) > div[style*="display: flex"] > div {
-                width: 200px !important;
-                max-width: 200px !important;
+                width: 175px !important;
+                max-width: 175px !important;
                 margin: 0 auto !important;
             }
             
@@ -2963,8 +2963,8 @@
             .sponsors-grid {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 1rem !important;
-                padding: 0 1rem !important;
+                gap: 2% !important;
+                padding: 0 2% !important;
                 max-width: 100% !important;
                 justify-items: center !important;
             }
@@ -2976,9 +2976,9 @@
             div[style*="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))"] {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 1rem !important;
+                gap: 2% !important;
                 row-gap: 1rem !important;
-                padding: 0 1rem !important;
+                padding: 0 2% !important;
                 max-width: 100% !important;
                 justify-items: center !important;
             }
@@ -2991,7 +2991,7 @@
             div[style*="grid-template-columns: 1fr 1fr"]:has(h3) {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 1rem !important;
+                gap: 2% !important;
             }
             
             /* Venue Partner - center title */
@@ -3013,8 +3013,8 @@
             }
             
             #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(1) > div[style*="display: flex"] > div {
-                width: 200px !important;
-                max-width: 200px !important;
+                width: 175px !important;
+                max-width: 175px !important;
                 margin: 0 auto !important;
             }
             
@@ -3037,8 +3037,8 @@
             }
             
             #participants div[style*="grid-template-columns: 1fr 1fr"] > div:nth-child(2) > div[style*="display: flex"] > div {
-                width: 200px !important;
-                max-width: 200px !important;
+                width: 175px !important;
+                max-width: 175px !important;
                 margin: 0 auto !important;
             }
             
@@ -3049,9 +3049,9 @@
             #participants > div > div:last-of-type > div[style*="display: flex"] {
                 display: grid !important;
                 grid-template-columns: 1fr 1fr !important;
-                gap: 1rem !important;
+                gap: 2% !important;
                 row-gap: 1rem !important;
-                padding: 0 1rem !important;
+                padding: 0 2% !important;
                 flex-wrap: nowrap !important;
                 justify-items: center !important;
             }
@@ -3891,28 +3891,35 @@
                 gap: 1rem !important;
             }
             
-            /* 4) Remove padding from Google Map container */
-            #venue {
-                padding: 0 !important;
-            }
-            
-            #venue > div {
-                padding: 0 !important;
-            }
-            
-            #venue iframe {
-                display: block !important;
-                margin: 0 !important;
-                padding: 0 !important;
-            }
-            
-            /* 5) Reduce padding on "Take the stage" section */
-            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] > div {
+            /* 5) Reduce padding on "Showcase Your Brand" section */
+            #join-event-hero {
                 padding-left: 1rem !important;
                 padding-right: 1rem !important;
             }
             
-            /* 6) Reduce font size of "Take the stage" heading and text */
+            #join-event-hero > div {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            /* 6) Reduce padding on "Take the stage" section - outer container */
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            section[style*="background: linear-gradient"][style*="Liveshow.jpg"] > div {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+            
+            /* 7) Reduce padding on "Take the stage" inner quote container */
+            div[style*="max-width: 900px"][style*="padding: 2.5rem"][style*="background: rgba(0, 0, 0, 0.4)"] {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            
+            /* 8) Reduce font size of "Take the stage" heading and text */
             section[style*="background: linear-gradient"][style*="Liveshow.jpg"] h3 {
                 font-size: 1.2rem !important;
             }
@@ -3921,7 +3928,7 @@
                 font-size: 0.9rem !important;
             }
             
-            /* 7) Reduce padding on testimonials containers */
+            /* 9) Reduce padding on testimonials containers */
             div[style*="background: #f8f9fa"][style*="padding: 2.5rem"] {
                 padding: 1.5rem !important;
             }
@@ -5170,9 +5177,8 @@
                 <img src="https://home.hireplanner.com/wp-content/uploads/2026/05/HirePlanner-Events-Venue-Partner-MInato-City-Industry-Promotion-Center.png" alt="Minato City Industry Promotion Center" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: var(--shadow-xl); display: block; margin: 0 auto;">
             </div>
             
-            <!-- Location Details Grid -->
-            <div class="venue-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 3rem auto; max-width: 1200px; padding: 0 4rem;">
-                <!-- Column 1: Location Details -->
+            <!-- Location Details - Full Width -->
+            <div style="margin: 3rem auto; max-width: 1200px; padding: 0 4rem;">
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 2rem; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1);">
                     <h3 style="color: #2babfa; font-size: 1.5rem; margin-bottom: 1.5rem; font-weight: 700;">Location</h3>
                     <p style="color: #f8f9fa; font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
@@ -5196,8 +5202,10 @@
                         <strong style="color: #2babfa;">Event Reception (Check-In):</strong> 11F
                     </p>
                 </div>
-                
-                <!-- Column 2: Google Map -->
+            </div>
+            
+            <!-- Google Map - Full Width -->
+            <div style="margin: 3rem auto; max-width: 1200px; padding: 0 4rem;">
                 <div style="background: rgba(255, 255, 255, 0.05); padding: 0; border-radius: 15px; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden;">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3242.2945530741085!2d139.7420419764274!3d35.6451138725989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b46dab453c3%3A0x937ea62c6c805d25!2sMinatokuritsusangyoshinko%20Center!5e0!3m2!1sen!2sjp!4v1778149948288!5m2!1sen!2sjp" width="100%" height="100%" style="border:0; min-height: 500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
