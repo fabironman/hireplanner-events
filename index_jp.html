@@ -2581,13 +2581,29 @@
             
             /* スピーカー - Add padding to first and last of each row */
             .スピーカー-grid > div:nth-child(4n+1) {
-                padding-left: 1rem !important;
+                padding-left: 0rem !important;
             }
             
             .スピーカー-grid > div:nth-child(4n) {
-                padding-right: 1rem !important;
+                padding-right: 0rem !important;
             }
             
+            /* スピーカー cards - reduce padding and font size on mobile */
+.speaker-info {
+    padding: 0.4rem !important;  /* Reduced from 0.8rem */
+}
+
+.speaker-name {
+    font-size: 0.65rem !important;  /* Reduced from 0.85rem */
+}
+
+.speaker-title {
+    font-size: 0.6rem !important;  /* Reduced from 0.7rem */
+}
+
+.speaker-company {
+    font-size: 0.6rem !important;  /* Reduced from 0.7rem */
+}            
             /* Why 参加 boxes - reduce title font size */
             .benefit-card-enhanced h3 {
                 font-size: 1.1rem !important;
@@ -4525,7 +4541,7 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 3rem; padding: 1rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <div style="text-align: center; margin-top: 3rem; padding: 1.5rem; max-width: 900px; margin-left: auto; margin-right: auto;">
                 <p style="font-size: 1.2rem; line-height: 1.8; color: #b8bcc4; font-weight: 700; margin-bottom: 1.5rem;"><strong>共に成長 | 共に学ぶ</strong></p>
                 <p style="font-size: 1.2rem; line-height: 1.8; color: #b8bcc4; font-weight: 400;">日本を代表するIT・テクノロジー企業が集結する、刺激と出会いに満ちた特別な夜へようこそ。業界を牽引する企業の魅力や成功の秘訣に触れながら、新たなインスピレーションとネットワーキングを楽しみましょう！</p>
             </div>
@@ -4695,11 +4711,11 @@
                     <div class="stat-number">548</div>
                     <div class="stat-label" style="color: #0a1128;">参加者数</div>
                     <div class="stat-description">主に東京で活躍するプロフェッショナルな方々</div>
-                    <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #0a1128; font-weight: 600;">昨年比32%増加</div>
+                    <div class="stat-label" style="color: #0a1128;">昨年比32%増加</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">9</div>
-                    <div class="stat-label" style="color: #0a1128;">トークセッション & ワークショップ</div>
+                    <div class="stat-label" style="color: #0a1128;">トークセッション<br>ワークショップ</div>
                     <div class="stat-description">テックトーク、パネルディスカッション、トレーニング...</div>
                 </div>
                 <div class="stat-card">
@@ -4762,7 +4778,7 @@
                             <div class="program-session-header">
                                 <div style="flex: 1;">
                                     <h4>開場挨拶</h4>
-                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <span style="font-size: 0.85rem; color: #b8bcc4;">- 英語でのセッション 🇬🇧</span></p>
+                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <br><span style="font-size: 0.85rem; color: #b8bcc4;">英語でのセッション 🇬🇧</span></p>
                                 </div>
                                 <span class="program-session-toggle">▼</span>
                             </div>
@@ -4782,7 +4798,7 @@
                             <div class="program-session-header">
                                 <div style="flex: 1;">
                                     <h4>テックトーク - セッション 1</h4>
-                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <span style="font-size: 0.85rem; color: #b8bcc4;">- 英語でのセッション 🇬🇧</span></p>
+                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <br><span style="font-size: 0.85rem; color: #b8bcc4;">英語でのセッション 🇬🇧</span></p>
                                 </div>
                                 <span class="program-session-toggle">▼</span>
                             </div>
@@ -4803,7 +4819,7 @@
                             <div class="program-session-header">
                                 <div style="flex: 1;">
                                     <h4>テックトーク - セッション 2</h4>
-                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <span style="font-size: 0.85rem; color: #b8bcc4;">- 日本語でのセッション 🇯🇵</span></p>
+                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <br><span style="font-size: 0.85rem; color: #b8bcc4;">日本語でのセッション 🇯🇵</span></p>
                                 </div>
                                 <span class="program-session-toggle">▼</span>
                             </div>
@@ -4824,7 +4840,7 @@
                             <div class="program-session-header">
                                 <div style="flex: 1;">
                                     <h4>テックトーク - セッション 3</h4>
-                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <span style="font-size: 0.85rem; color: #b8bcc4;">- 英語でのセッション 🇬🇧</span></p>
+                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <br><span style="font-size: 0.85rem; color: #b8bcc4;">英語でのセッション 🇬🇧</span></p>
                                 </div>
                                 <span class="program-session-toggle">▼</span>
                             </div>
@@ -4845,7 +4861,7 @@
                             <div class="program-session-header">
                                 <div style="flex: 1;">
                                     <h4>テックトーク - セッション 4</h4>
-                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <span style="font-size: 0.85rem; color: #b8bcc4;">- 日本語でのセッション 🇯🇵</span></p>
+                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <br><span style="font-size: 0.85rem; color: #b8bcc4;">日本語でのセッション 🇯🇵</span></p>
                                 </div>
                                 <span class="program-session-toggle">▼</span>
                             </div>
@@ -4866,7 +4882,7 @@
                             <div class="program-session-header">
                                 <div style="flex: 1;">
                                     <h4>テックトーク - セッション 5</h4>
-                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <span style="font-size: 0.85rem; color: #b8bcc4;">- 英語でのセッション 🇬🇧</span></p>
+                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <br><span style="font-size: 0.85rem; color: #b8bcc4;">英語でのセッション 🇬🇧</span></p>
                                 </div>
                                 <span class="program-session-toggle">▼</span>
                             </div>
@@ -4887,7 +4903,7 @@
                             <div class="program-session-header">
                                 <div style="flex: 1;">
                                     <h4>テックトーク - セッション 6</h4>
-                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <span style="font-size: 0.85rem; color: #b8bcc4;">- 日本語でのセッション 🇯🇵</span></p>
+                                    <p><span style="font-size: 0.85rem; color: #2babfa;">📍 メインカンファレンスホール · 11F</span> <br><span style="font-size: 0.85rem; color: #b8bcc4;">日本語でのセッション 🇯🇵</span></p>
                                 </div>
                                 <span class="program-session-toggle">▼</span>
                             </div>
@@ -5395,12 +5411,12 @@
                     </p>
                     <p style="color: #f8f9fa; font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
                         <strong style="color: #2babfa;">最寄り駅:</strong><br>
-                        • 田町駅三田口（西口）徒歩4分<br>
-                        • 都営地下鉄三田駅A1・A2出口徒歩2分<br>
+                        田町駅三田口（西口）徒歩4分<br>
+                        都営地下鉄三田駅A1・A2出口徒歩2分<br>
                         <span style="color: #b8bcc4; font-size: 0.9rem;">（A1出口は7：00～21：00利用可）</span>
                     </p>
                     <p style="color: #f8f9fa; font-size: 1rem; line-height: 1.8;">
-                        <strong style="color: #2babfa;">イベント受付 (チェックイン):</strong><br> 11Fのイベント会場へ直接お越しください
+                        <strong style="color: #2babfa;">イベント受付 (チェックイン):</strong><br> 11Fのイベント会場前
                     </p>
                 </div>
             </div>
@@ -5518,7 +5534,7 @@
                 <div class="benefit-card-enhanced" style="text-align: center;">
                     <div class="benefit-number" style="text-align: center;">4</div>
                     <h3>リアルな経験から学ぶ</h3>
-                    <p>日本のテックシーンを牽引するエンジニア、創業者、プロダクトリーダーたちから、リアルな経験談や実践的な知見を学びましょう。成功だけでなく挑戦や失敗も含めたリアルなストーリーが、新たなインスピレーションと成長のヒントを与えてくれます。</p>
+                    <p>日本のテックシーンを牽引するエンジニア、創業者、プロダクトリーダーたちから、リアルな経験や実践的な知見を学びましょう。成功だけでなく挑戦や失敗などのリアルなストーリーが、新たなインスピレーションと成長のヒントを与えてくれます。</p>
                 </div>
                 
                 <!-- Card 5 -->
@@ -5532,7 +5548,7 @@
                 <div class="benefit-card-enhanced" style="text-align: center;">
                     <div class="benefit-number" style="text-align: center;">6</div>
                     <h3>リラックスしながら自然につながる</h3>
-                    <p>形式的なネットワーキングではなく、食事やドリンク、音楽を楽しみながら自然な交流を体験しましょう。リラックスした活気ある空間の中で、本音で話せるつながりや、長く続く関係を築くことができます。</p>
+                    <p>形式的なネットワーキングではなく、食事や飲み物を楽しみながら自然な交流を体験しましょう。リラックスした活気ある空間の中で、本音で話せるつながりや、長く続く関係を築くことができます。</p>
                 </div>
             </div>
             
@@ -5847,7 +5863,7 @@
                             <div style="background: #f8f9fa; padding: 2rem 1.5rem; border-radius: 15px; border-top: 4px solid #ffc107; text-align: center;">
                                 <div style="font-size: 2.5rem; color: #ffc107; font-weight: 800; margin-bottom: 1rem;">2</div>
                                 <h4 style="color: #1a1a2e; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600;">ストーリーの共有</h4>
-                                <p style="color: #8a8e96; font-size: 0.9rem; line-height: 1.6; margin: 0;">貴社の価値観やビジョンを参加者に直接アピール</p>
+                                <p style="color: #8a8e96; font-size: 0.9rem; line-height: 1.6; margin: 0;">貴社の価値観やビジョンを直接アピール</p>
                             </div>
                             
                             <div style="background: #f8f9fa; padding: 2rem 1.5rem; border-radius: 15px; border-top: 4px solid #ffc107; text-align: center;">
@@ -5865,7 +5881,7 @@
                             <div style="background: #f8f9fa; padding: 2rem 1.5rem; border-radius: 15px; border-top: 4px solid #ffc107; text-align: center;">
                                 <div style="font-size: 2.5rem; color: #ffc107; font-weight: 800; margin-bottom: 1rem;">5</div>
                                 <h4 style="color: #1a1a2e; margin-bottom: 0.75rem; font-size: 1.1rem; font-weight: 600;">採用・ビジネス機会</h4>
-                                <p style="color: #8a8e96; font-size: 0.9rem; line-height: 1.6; margin: 0;">採用やパートナーシップにつながる新しい出会い</p>
+                                <p style="color: #8a8e96; font-size: 0.9rem; line-height: 1.6; margin: 0;">採用や協業につながる新しい出会い</p>
                             </div>
                         </div>
                     </div>
@@ -6463,7 +6479,7 @@
         <br>
         <div class="container" style="max-width: 1000px; margin: 0 auto;">
             <div class="section-header">
-                <h2 class="section-title" style="font-size: 2.5rem; color: #1a1a2e; margin-bottom: 1rem;"><span style="color: #2babfa;">LinkedIn</span>でフォローする</h2>
+                <h2 class="section-title" style="font-size: 2.5rem; color: #1a1a2e; margin-bottom: 1rem;"><span style="color: #2babfa;">LinkedIn</span>でフォロー</h2>
                 <p class="section-subtitle" style="font-size: 1.1rem; color: #555;">私たちのコミュニティーとつながりましょう</p>
             </div>
             
